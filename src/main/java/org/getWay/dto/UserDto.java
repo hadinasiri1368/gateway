@@ -1,6 +1,5 @@
-package org.getWay.model;
+package org.getWay.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,11 +9,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class User {
+public class UserDto {
     private Long id;
     private String username;
-    private String password;
-    private Boolean isAdmin;
-    private Boolean isActive;
     private Long personId;
+    private boolean isAdmin;
 }
