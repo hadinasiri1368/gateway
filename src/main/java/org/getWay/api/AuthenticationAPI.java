@@ -57,18 +57,8 @@ public class AuthenticationAPI {
     }
 
     @GetMapping(path = "/api/user/role")
-    List<Role> listRole() {
-        return authenticationService.listRole();
-    }
-
-    @GetMapping(path = "/api/user/colleague")
-    List<User> listColleague() {
-        return authenticationService.listColleague();
-    }
-
-    @PostMapping(path = "/api/user/colleague")
-    List<User> listColleague(@RequestBody List<Long> userIds) {
-        return authenticationService.listColleague(userIds);
+    List<Role> listRole(@RequestParam(value = "userId", required = false) Long userId) {
+        return authenticationService.listRole(userId);
     }
 
     @PostMapping(path = "/api/user/changePassword")
@@ -262,7 +252,7 @@ public class AuthenticationAPI {
     }
 
     @GetMapping(path = "/api/userRole")
-    List<UserRole> listUserRole(){
+    List<UserRole> listUserRole() {
         return authenticationService.listUserRole();
     }
 }

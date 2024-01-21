@@ -10,11 +10,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class User {
+public class UserCompany {
     private Long id;
-    private String username;
-    private String password;
-    private Boolean isAdmin;
-    private Boolean isActive;
-    private Long personId;
+    private Person company;
+    private Long userId;
 }
