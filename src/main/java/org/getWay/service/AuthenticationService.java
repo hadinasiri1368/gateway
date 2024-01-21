@@ -37,13 +37,7 @@ public interface AuthenticationService {
     User getUser(@PathVariable Long id);
 
     @GetMapping(path = "/api/user/role")
-    List<Role> listRole();
-
-    @GetMapping(path = "/api/user/colleague")
-    List<User> listColleague();
-
-    @PostMapping(path = "/api/user/colleague")
-    List<User> listColleague(@RequestBody List<Long> userIds);
+    List<Role> listRole(@RequestParam(value = "userId", required = false) Long userId);
 
     @PostMapping(path = "/api/user/changePassword")
     int changePassword(@RequestBody ChangePasswordDto changePasswordDto);
