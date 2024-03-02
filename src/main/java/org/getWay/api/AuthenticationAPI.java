@@ -1,6 +1,6 @@
 package org.getWay.api;
 
-import jakarta.servlet.http.HttpServletRequest;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.getWay.dto.*;
 import org.getWay.model.*;
 import org.getWay.service.AuthenticationService;
@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
+@SecurityRequirement(name = "Bearer Authentication")
 public class AuthenticationAPI {
     @Autowired
     AuthenticationService authenticationService;
@@ -19,6 +20,11 @@ public class AuthenticationAPI {
     @PostMapping(path = "/login")
     ResponseEntity<String> login(@RequestBody LoginDto loginDto) {
         return authenticationService.login(loginDto);
+    }
+
+    @GetMapping(path = "/api/user/logout")
+    public ResponseEntity<String> logout(){
+        return authenticationService.logout();
     }
 
     @GetMapping(path = "/getUserId")

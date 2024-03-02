@@ -1,6 +1,6 @@
 package org.getWay.api;
 
-import jakarta.servlet.http.HttpServletRequest;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.getWay.dto.*;
 import org.getWay.model.*;
 import org.getWay.service.TransportService;
@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 
 @RestController
+@SecurityRequirement(name = "Bearer Authentication")
 public class TransportAPI {
     @Autowired
     TransportService transportService;

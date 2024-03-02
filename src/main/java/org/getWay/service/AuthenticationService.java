@@ -15,6 +15,9 @@ public interface AuthenticationService {
     @PostMapping(path = "/login")
     ResponseEntity<String> login(@RequestBody LoginDto loginDto);
 
+    @GetMapping(path = "/api/user/logout")
+    ResponseEntity<String> logout();
+
     @GetMapping(path = "/getUserId")
     ResponseEntity<String> getUserId(@RequestParam("token") String token);
 
