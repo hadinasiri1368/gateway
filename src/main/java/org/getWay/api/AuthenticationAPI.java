@@ -22,7 +22,7 @@ public class AuthenticationAPI {
         return authenticationService.login(loginDto);
     }
 
-    @GetMapping(path = "/api/user/logout")
+    @GetMapping(path = "/logout")
     public ResponseEntity<String> logout(){
         return authenticationService.logout();
     }
