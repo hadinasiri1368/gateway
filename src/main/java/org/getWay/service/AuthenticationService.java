@@ -13,7 +13,7 @@ import java.util.Map;
 @FeignClient(name = "AUTHENTICATION")
 public interface AuthenticationService {
     @PostMapping(path = "/login")
-    ResponseEntity<String> login(@RequestBody LoginDto loginDto);
+    ResponseEntity<LoginData> login(@RequestBody LoginDto loginDto);
 
     @GetMapping(path = "/logout")
     ResponseEntity<String> logout();

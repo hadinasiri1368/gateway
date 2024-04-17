@@ -18,7 +18,7 @@ public class AuthenticationAPI {
     AuthenticationService authenticationService;
 
     @PostMapping(path = "/login")
-    ResponseEntity<String> login(@RequestBody LoginDto loginDto) {
+    ResponseEntity<LoginData> login(@RequestBody LoginDto loginDto) {
         return authenticationService.login(loginDto);
     }
 
