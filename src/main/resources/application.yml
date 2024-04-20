@@ -7,4 +7,9 @@ eureka:
 
 spring:
   application:
-    name: GETWAY
+    name: GATEWAY
+
+logging:
+  file:
+    name: LOG_GATEWAY.TXT
+
