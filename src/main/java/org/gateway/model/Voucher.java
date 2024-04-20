@@ -1,16 +1,19 @@
-package org.getWay.model;
+package org.gateway.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserRole {
+public class Voucher  {
     private Long id;
-    private User user;
-    private Role role;
+    private String description;
+    private String voucherDate;
+    private List<VoucherDetail> voucherDetails;
 }

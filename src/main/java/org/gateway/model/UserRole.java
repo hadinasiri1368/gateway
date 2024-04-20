@@ -1,4 +1,4 @@
-package org.getWay.model;
+package org.gateway.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,8 +9,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserGroupRole {
+public class UserRole {
     private Long id;
-    private UserGroup userGroup;
+    private User user;
     private Role role;
 }

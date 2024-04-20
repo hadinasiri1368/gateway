@@ -1,5 +1,4 @@
-package org.getWay.model;
-
+package org.gateway.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -10,11 +9,9 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class User {
+public class UserDto {
     private Long id;
     private String username;
-    private String password;
-    private Boolean isAdmin;
-    private Boolean isActive;
     private Long personId;
+    private boolean isAdmin;
 }

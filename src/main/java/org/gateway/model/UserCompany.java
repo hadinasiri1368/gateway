@@ -1,16 +1,17 @@
-package org.getWay.model;
+package org.gateway.model;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserPermission {
+@Getter
+@Setter
+public class UserCompany {
     private Long id;
-    private User user;
-    private Permission permission;
+    private Person company;
+    private Long userId;
 }

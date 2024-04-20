@@ -1,4 +1,4 @@
-package org.getWay.dto;
+package org.gateway.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

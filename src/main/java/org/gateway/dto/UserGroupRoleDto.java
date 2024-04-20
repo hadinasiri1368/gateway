@@ -1,4 +1,4 @@
-package org.getWay.dto;
+package org.gateway.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,8 +7,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class UserGroupDetailDto {
+public class UserGroupRoleDto {
     private Long id;
     private Long userGroupId;
-    private Long userId;
+    private Long roleId;
 }

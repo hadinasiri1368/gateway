@@ -1,14 +1,14 @@
-package org.getWay.dto;
+package org.gateway.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
-@AllArgsConstructor
 @Getter
 @Setter
-public class UserCompanyDto {
+@AllArgsConstructor
+public class UserRoleDto {
     private Long id;
-    private Long companyId;
+    private Long roleId;
     private Long userId;
 }
