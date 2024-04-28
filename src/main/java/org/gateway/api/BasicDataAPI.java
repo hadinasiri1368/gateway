@@ -21,12 +21,12 @@ public class BasicDataAPI {
         return basicDataService.addBaseInfoGood(baseInfoGood);
     }
 
-    @PostMapping(path = "/api/baseInfoGood/edit")
+    @PutMapping(path = "/api/baseInfoGood/edit")
     Long editBaseInfoGood(@RequestBody BaseInfoGood baseInfoGood) {
         return basicDataService.editBaseInfoGood(baseInfoGood);
     }
 
-    @PostMapping(path = "/api/baseInfoGood/remove/{id}")
+    @DeleteMapping(path = "/api/baseInfoGood/remove/{id}")
     Long removeBaseInfoGood(@PathVariable Long id) {
         return basicDataService.removeBaseInfoGood(id);
     }
@@ -46,12 +46,12 @@ public class BasicDataAPI {
         return basicDataService.addCarCapacity(carCapacity);
     }
 
-    @PostMapping(path = "/api/carCapacity/edit")
+    @PutMapping(path = "/api/carCapacity/edit")
     Long editCarCapacity(@RequestBody CarCapacity carCapacity) {
         return basicDataService.editCarCapacity(carCapacity);
     }
 
-    @PostMapping(path = "/api/carCapacity/remove/{id}")
+    @DeleteMapping(path = "/api/carCapacity/remove/{id}")
     Long removeCarCapacity(@PathVariable Long id) {
         return basicDataService.removeCarCapacity(id);
     }
@@ -71,12 +71,12 @@ public class BasicDataAPI {
         return basicDataService.addCarGroup(carGroupDto);
     }
 
-    @PostMapping(path = "/api/carGroup/edit")
+    @PutMapping(path = "/api/carGroup/edit")
     Long editCarGroup(@RequestBody CarGroupDto carGroupDto) {
         return basicDataService.editCarGroup(carGroupDto);
     }
 
-    @PostMapping(path = "/api/carGroup/remove/{id}")
+    @DeleteMapping(path = "/api/carGroup/remove/{id}")
     Long removeCarGroup(@PathVariable Long id) {
         return basicDataService.removeCarGroup(id);
     }
@@ -96,12 +96,12 @@ public class BasicDataAPI {
         return basicDataService.addCarProperty(carProperty);
     }
 
-    @PostMapping(path = "/api/carProperty/edit")
+    @PutMapping(path = "/api/carProperty/edit")
     Long editCarProperty(@RequestBody CarProperty carProperty) {
         return basicDataService.editCarProperty(carProperty);
     }
 
-    @PostMapping(path = "/api/carProperty/remove/{id}")
+    @DeleteMapping(path = "/api/carProperty/remove/{id}")
     Long removeCarProperty(@PathVariable Long id) {
         return basicDataService.removeCarProperty(id);
     }
@@ -121,12 +121,12 @@ public class BasicDataAPI {
         return basicDataService.addCountryDivision(countryDivisionDto);
     }
 
-    @PostMapping(path = "/api/countryDivision/edit")
+    @PutMapping(path = "/api/countryDivision/edit")
     Long editCountryDivision(@RequestBody CountryDivisionDto countryDivisionDto) {
         return basicDataService.editCountryDivision(countryDivisionDto);
     }
 
-    @PostMapping(path = "/api/countryDivision/remove/{id}")
+    @DeleteMapping(path = "/api/countryDivision/remove/{id}")
     Long removeCountryDivision(@PathVariable Long id) {
         return basicDataService.removeCountryDivision(id);
     }
@@ -146,12 +146,12 @@ public class BasicDataAPI {
         return basicDataService.addDriverLicenseType(driverLicenseType);
     }
 
-    @PostMapping(path = "/api/driverLicenseType/edit")
+    @PutMapping(path = "/api/driverLicenseType/edit")
     Long editDriverLicenseType(@RequestBody DriverLicenseType driverLicenseType) {
         return basicDataService.editDriverLicenseType(driverLicenseType);
     }
 
-    @PostMapping(path = "/api/driverLicenseType/remove/{id}")
+    @DeleteMapping(path = "/api/driverLicenseType/remove/{id}")
     Long removeDriverLicenseType(@PathVariable Long id) {
         return basicDataService.removeDriverLicenseType(id);
     }
@@ -171,12 +171,12 @@ public class BasicDataAPI {
         return basicDataService.addFleetType(fleetType);
     }
 
-    @PostMapping(path = "/api/fleetType/edit")
+    @PutMapping(path = "/api/fleetType/edit")
     Long editFleetType(@RequestBody FleetType fleetType) {
         return basicDataService.editFleetType(fleetType);
     }
 
-    @PostMapping(path = "/api/fleetType/remove/{id}")
+    @DeleteMapping(path = "/api/fleetType/remove/{id}")
     Long removeFleetType(@PathVariable Long id) {
         return basicDataService.removeFleetType(id);
     }
@@ -196,12 +196,12 @@ public class BasicDataAPI {
         return basicDataService.addFuelType(fuelType);
     }
 
-    @PostMapping(path = "/api/fuelType/edit")
+    @PutMapping(path = "/api/fuelType/edit")
     Long editFuelType(@RequestBody FuelType fuelType) {
         return basicDataService.editFuelType(fuelType);
     }
 
-    @PostMapping(path = "/api/fuelType/remove/{id}")
+    @DeleteMapping(path = "/api/fuelType/remove/{id}")
     Long removeFuelType(@PathVariable Long id) {
         return basicDataService.removeFuelType(id);
     }
@@ -221,12 +221,12 @@ public class BasicDataAPI {
         return basicDataService.addLoadingType(loadingType);
     }
 
-    @PostMapping(path = "/api/loadingType/edit")
+    @PutMapping(path = "/api/loadingType/edit")
     Long editLoadingType(@RequestBody LoadingType loadingType) {
         return basicDataService.editLoadingType(loadingType);
     }
 
-    @PostMapping(path = "/api/loadingType/remove/{id}")
+    @DeleteMapping(path = "/api/loadingType/remove/{id}")
     Long removeLoadingType(@PathVariable Long id) {
         return basicDataService.removeLoadingType(id);
     }
@@ -246,12 +246,12 @@ public class BasicDataAPI {
         return basicDataService.addOrderStatus(orderStatus);
     }
 
-    @PostMapping(path = "/api/orderStatus/edit")
+    @PutMapping(path = "/api/orderStatus/edit")
     Long editOrderStatus(@RequestBody OrderStatus orderStatus) {
         return basicDataService.editOrderStatus(orderStatus);
     }
 
-    @PostMapping(path = "/api/orderStatus/remove/{id}")
+    @DeleteMapping(path = "/api/orderStatus/remove/{id}")
     Long removeOrderStatus(@PathVariable Long id) {
         return basicDataService.removeOrderStatus(id);
     }
@@ -271,12 +271,12 @@ public class BasicDataAPI {
         return basicDataService.addPackingType(packingType);
     }
 
-    @PostMapping(path = "/api/packingType/edit")
+    @PutMapping(path = "/api/packingType/edit")
     Long editPackingType(@RequestBody PackingType packingType) {
         return basicDataService.editPackingType(packingType);
     }
 
-    @PostMapping(path = "/api/packingType/remove/{id}")
+    @DeleteMapping(path = "/api/packingType/remove/{id}")
     Long removePackingType(@PathVariable Long id) {
         return basicDataService.removePackingType(id);
     }
@@ -296,12 +296,12 @@ public class BasicDataAPI {
         return basicDataService.addPlaqueTagPersianPart(plaqueTagPersianPart);
     }
 
-    @PostMapping(path = "/api/plaqueTagPersianPart/edit")
+    @PutMapping(path = "/api/plaqueTagPersianPart/edit")
     Long editPlaqueTagPersianPart(@RequestBody PlaqueTagPersianPart plaqueTagPersianPart){
         return basicDataService.editPlaqueTagPersianPart(plaqueTagPersianPart);
     }
 
-    @PostMapping(path = "/api/plaqueTagPersianPart/remove/{id}")
+    @DeleteMapping(path = "/api/plaqueTagPersianPart/remove/{id}")
     Long removePlaqueTagPersianPart(@PathVariable Long id){
         return basicDataService.removePlaqueTagPersianPart(id);
     }
@@ -321,12 +321,12 @@ public class BasicDataAPI {
         return basicDataService.addRequestStatus(requestStatus);
     }
 
-    @PostMapping(path = "/api/requestStatus/edit")
+    @PutMapping(path = "/api/requestStatus/edit")
     Long editRequestStatus(@RequestBody RequestStatus requestStatus){
         return basicDataService.editRequestStatus(requestStatus);
     }
 
-    @PostMapping(path = "/api/requestStatus/remove/{id}")
+    @DeleteMapping(path = "/api/requestStatus/remove/{id}")
     Long removeRequestStatus(@PathVariable Long id){
         return basicDataService.removeRequestStatus(id);
     }

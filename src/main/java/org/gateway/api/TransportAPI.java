@@ -21,12 +21,12 @@ public class TransportAPI {
         return transportService.addPerson(person);
     }
 
-    @PostMapping(path = "/api/person/edit")
+    @PutMapping(path = "/api/person/edit")
     Long editPerson(@RequestBody Person person) {
         return transportService.editPerson(person);
     }
 
-    @PostMapping(path = "/api/person/remove/{id}")
+    @DeleteMapping(path = "/api/person/remove/{id}")
     Long removePerson(@PathVariable Long id) {
         return transportService.removePerson(id);
     }
@@ -46,12 +46,12 @@ public class TransportAPI {
         return transportService.addDriver(driverDto);
     }
 
-    @PostMapping(path = "/api/driver/edit")
+    @PutMapping(path = "/api/driver/edit")
     Long editDriver(@RequestBody DriverDto driverDto) {
         return transportService.editDriver(driverDto);
     }
 
-    @PostMapping(path = "/api/driver/remove/{id}")
+    @DeleteMapping(path = "/api/driver/remove/{id}")
     Long removeDriver(@PathVariable Long id) {
         return transportService.removeDriver(id);
     }
@@ -71,12 +71,12 @@ public class TransportAPI {
         return transportService.addCar(carDto);
     }
 
-    @PostMapping(path = "/api/car/edit")
+    @PutMapping(path = "/api/car/edit")
     Long editCar(@RequestBody CarDto carDto) {
         return transportService.editCar(carDto);
     }
 
-    @PostMapping(path = "/api/car/remove/{id}")
+    @DeleteMapping(path = "/api/car/remove/{id}")
     Long removeCar(@PathVariable Long id) {
         return transportService.removeCar(id);
     }
@@ -96,12 +96,12 @@ public class TransportAPI {
         return transportService.addPlaque(plaqueDto);
     }
 
-    @PostMapping(path = "/api/plaque/edit")
+    @PutMapping(path = "/api/plaque/edit")
     Long editPlaque(@RequestBody PlaqueDto plaqueDto) {
         return transportService.editPlaque(plaqueDto);
     }
 
-    @PostMapping(path = "/api/plaque/remove/{id}")
+    @DeleteMapping(path = "/api/plaque/remove/{id}")
     Long removePlaque(@PathVariable Long id) {
         return transportService.removePlaque(id);
     }
@@ -121,12 +121,12 @@ public class TransportAPI {
         return transportService.addGeneralLedger(generalLedger);
     }
 
-    @PostMapping(path = "/api/generalLedger/edit")
+    @PutMapping(path = "/api/generalLedger/edit")
     Long editGeneralLedger(@RequestBody GeneralLedger generalLedger) {
         return transportService.editGeneralLedger(generalLedger);
     }
 
-    @PostMapping(path = "/api/generalLedger/remove/{id}")
+    @DeleteMapping(path = "/api/generalLedger/remove/{id}")
     Long removeGeneralLedger(@PathVariable Long id) {
         return transportService.removeGeneralLedger(id);
     }
@@ -146,12 +146,12 @@ public class TransportAPI {
         return transportService.addSubsidiaryLedger(subsidiaryLedgerDto);
     }
 
-    @PostMapping(path = "/api/subsidiaryLedger/edit")
+    @PutMapping(path = "/api/subsidiaryLedger/edit")
     Long editSubsidiaryLedger(@RequestBody SubsidiaryLedgerDto subsidiaryLedgerDto) {
         return transportService.editSubsidiaryLedger(subsidiaryLedgerDto);
     }
 
-    @PostMapping(path = "/api/subsidiaryLedger/remove/{id}")
+    @DeleteMapping(path = "/api/subsidiaryLedger/remove/{id}")
     Long removeSubsidiaryLedger(@PathVariable Long id) {
         return transportService.removeSubsidiaryLedger(id);
     }
@@ -171,12 +171,12 @@ public class TransportAPI {
         return transportService.addDetailLedger(detailLedgerDto);
     }
 
-    @PostMapping(path = "/api/detailLedger/edit")
+    @PutMapping(path = "/api/detailLedger/edit")
     Long editDetailLedger(@RequestBody DetailLedgerDto detailLedgerDto) {
         return transportService.editDetailLedger(detailLedgerDto);
     }
 
-    @PostMapping(path = "/api/detailLedger/remove/{id}")
+    @DeleteMapping(path = "/api/detailLedger/remove/{id}")
     Long removeDetailLedger(@PathVariable Long id) {
         return transportService.removeDetailLedger(id);
     }
@@ -196,27 +196,27 @@ public class TransportAPI {
         return transportService.addVoucher(voucherDto);
     }
 
-    @PostMapping(path = "/api/voucher/edit")
+    @PutMapping(path = "/api/voucher/edit")
     Long editVoucher(@RequestBody Voucher voucher) {
         return transportService.editVoucher(voucher);
     }
 
-    @PostMapping(path = "/api/voucherDetail/edit")
+    @PutMapping(path = "/api/voucherDetail/edit")
     Long editVoucherDetail(@RequestBody VoucherDetailDto voucherDetailDto) {
         return transportService.editVoucherDetail(voucherDetailDto);
     }
 
-    @PostMapping(path = "/api/voucherDetailList/edit")
+    @PutMapping(path = "/api/voucherDetailList/edit")
     Long editVoucherDetailList(@RequestBody List<VoucherDetailDto> voucherDetailDtos) {
         return transportService.editVoucherDetailList(voucherDetailDtos);
     }
 
-    @PostMapping(path = "/api/voucher/remove/{id}")
+    @DeleteMapping(path = "/api/voucher/remove/{id}")
     Long removeVoucher(@PathVariable Long id) {
         return transportService.removeVoucher(id);
     }
 
-    @PostMapping(path = "/api/voucherDetail/remove")
+    @DeleteMapping(path = "/api/voucherDetail/remove")
     Long removeVoucherDetail(@RequestBody List<VoucherDetailDto> voucherDetailDtos) {
         return transportService.removeVoucherDetail(voucherDetailDtos);
     }
@@ -246,7 +246,7 @@ public class TransportAPI {
         return transportService.addOrderImage(orderId, multipartFiles);
     }
 
-    @PostMapping(path = "/api/order/remove/{id}")
+    @DeleteMapping(path = "/api/order/remove/{id}")
     Long removeOrder(@PathVariable Long id) {
         return transportService.removeOrder(id);
     }
@@ -281,12 +281,12 @@ public class TransportAPI {
         return transportService.addUserCompany(userCompanyDto);
     }
 
-    @PostMapping(path = "/api/userCompany/edit")
+    @PutMapping(path = "/api/userCompany/edit")
     Long editUserCompany(@RequestBody UserCompanyDto userCompanyDto){
         return transportService.editUserCompany(userCompanyDto);
     }
 
-    @PostMapping(path = "/api/userCompany/remove/{id}")
+    @DeleteMapping(path = "/api/userCompany/remove/{id}")
     Long removeGUserCompany(@PathVariable Long id){
         return transportService.removeGUserCompany(id);
     }

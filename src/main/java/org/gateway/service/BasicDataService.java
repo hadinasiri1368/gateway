@@ -4,10 +4,7 @@ import org.gateway.dto.CarGroupDto;
 import org.gateway.dto.CountryDivisionDto;
 import org.gateway.model.*;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,10 +15,10 @@ public interface BasicDataService {
     @PostMapping(path = "/api/baseInfoGood/add")
     Long addBaseInfoGood(@RequestBody BaseInfoGood baseInfoGood);
 
-    @PostMapping(path = "/api/baseInfoGood/edit")
+    @PutMapping(path = "/api/baseInfoGood/edit")
     Long editBaseInfoGood(@RequestBody BaseInfoGood baseInfoGood);
 
-    @PostMapping(path = "/api/baseInfoGood/remove/{id}")
+    @DeleteMapping(path = "/api/baseInfoGood/remove/{id}")
     Long removeBaseInfoGood(@PathVariable Long id);
 
     @GetMapping(path = "/api/baseInfoGood/{id}")
@@ -33,10 +30,10 @@ public interface BasicDataService {
     @PostMapping(path = "/api/carCapacity/add")
     Long addCarCapacity(@RequestBody CarCapacity carCapacity);
 
-    @PostMapping(path = "/api/carCapacity/edit")
+    @PutMapping(path = "/api/carCapacity/edit")
     Long editCarCapacity(@RequestBody CarCapacity carCapacity);
 
-    @PostMapping(path = "/api/carCapacity/remove/{id}")
+    @DeleteMapping(path = "/api/carCapacity/remove/{id}")
     Long removeCarCapacity(@PathVariable Long id);
 
     @GetMapping(path = "/api/carCapacity/{id}")
@@ -48,10 +45,10 @@ public interface BasicDataService {
     @PostMapping(path = "/api/carGroup/add")
     Long addCarGroup(@RequestBody CarGroupDto carGroupDto);
 
-    @PostMapping(path = "/api/carGroup/edit")
+    @PutMapping(path = "/api/carGroup/edit")
     Long editCarGroup(@RequestBody CarGroupDto carGroupDto);
 
-    @PostMapping(path = "/api/carGroup/remove/{id}")
+    @DeleteMapping(path = "/api/carGroup/remove/{id}")
     Long removeCarGroup(@PathVariable Long id);
 
     @GetMapping(path = "/api/carGroup/{id}")
@@ -63,10 +60,10 @@ public interface BasicDataService {
     @PostMapping(path = "/api/carProperty/add")
     Long addCarProperty(@RequestBody CarProperty carProperty);
 
-    @PostMapping(path = "/api/carProperty/edit")
+    @PutMapping(path = "/api/carProperty/edit")
     Long editCarProperty(@RequestBody CarProperty carProperty);
 
-    @PostMapping(path = "/api/carProperty/remove/{id}")
+    @DeleteMapping(path = "/api/carProperty/remove/{id}")
     Long removeCarProperty(@PathVariable Long id);
 
     @GetMapping(path = "/api/carProperty/{id}")
@@ -78,10 +75,10 @@ public interface BasicDataService {
     @PostMapping(path = "/api/countryDivision/add")
     Long addCountryDivision(@RequestBody CountryDivisionDto countryDivisionDto);
 
-    @PostMapping(path = "/api/countryDivision/edit")
+    @PutMapping(path = "/api/countryDivision/edit")
     Long editCountryDivision(@RequestBody CountryDivisionDto countryDivisionDto);
 
-    @PostMapping(path = "/api/countryDivision/remove/{id}")
+    @DeleteMapping(path = "/api/countryDivision/remove/{id}")
     Long removeCountryDivision(@PathVariable Long id);
 
     @GetMapping(path = "/api/countryDivision/{id}")
@@ -93,10 +90,10 @@ public interface BasicDataService {
     @PostMapping(path = "/api/driverLicenseType/add")
     Long addDriverLicenseType(@RequestBody DriverLicenseType driverLicenseType);
 
-    @PostMapping(path = "/api/driverLicenseType/edit")
+    @PutMapping(path = "/api/driverLicenseType/edit")
     Long editDriverLicenseType(@RequestBody DriverLicenseType driverLicenseType);
 
-    @PostMapping(path = "/api/driverLicenseType/remove/{id}")
+    @DeleteMapping(path = "/api/driverLicenseType/remove/{id}")
     Long removeDriverLicenseType(@PathVariable Long id);
 
     @GetMapping(path = "/api/driverLicenseType/{id}")
@@ -108,10 +105,10 @@ public interface BasicDataService {
     @PostMapping(path = "/api/fleetType/add")
     Long addFleetType(@RequestBody FleetType fleetType);
 
-    @PostMapping(path = "/api/fleetType/edit")
+    @PutMapping(path = "/api/fleetType/edit")
     Long editFleetType(@RequestBody FleetType fleetType);
 
-    @PostMapping(path = "/api/fleetType/remove/{id}")
+    @DeleteMapping(path = "/api/fleetType/remove/{id}")
     Long removeFleetType(@PathVariable Long id);
 
     @GetMapping(path = "/api/fleetType/{id}")
@@ -123,10 +120,10 @@ public interface BasicDataService {
     @PostMapping(path = "/api/fuelType/add")
     Long addFuelType(@RequestBody FuelType fuelType);
 
-    @PostMapping(path = "/api/fuelType/edit")
+    @PutMapping(path = "/api/fuelType/edit")
     Long editFuelType(@RequestBody FuelType fuelType);
 
-    @PostMapping(path = "/api/fuelType/remove/{id}")
+    @DeleteMapping(path = "/api/fuelType/remove/{id}")
     Long removeFuelType(@PathVariable Long id);
 
     @GetMapping(path = "/api/fuelType/{id}")
@@ -138,10 +135,10 @@ public interface BasicDataService {
     @PostMapping(path = "/api/loadingType/add")
     Long addLoadingType(@RequestBody LoadingType loadingType);
 
-    @PostMapping(path = "/api/loadingType/edit")
+    @PutMapping(path = "/api/loadingType/edit")
     Long editLoadingType(@RequestBody LoadingType loadingType);
 
-    @PostMapping(path = "/api/loadingType/remove/{id}")
+    @DeleteMapping(path = "/api/loadingType/remove/{id}")
     Long removeLoadingType(@PathVariable Long id);
 
     @GetMapping(path = "/api/loadingType/{id}")
@@ -153,10 +150,10 @@ public interface BasicDataService {
     @PostMapping(path = "/api/orderStatus/add")
     Long addOrderStatus(@RequestBody OrderStatus orderStatus);
 
-    @PostMapping(path = "/api/orderStatus/edit")
+    @PutMapping(path = "/api/orderStatus/edit")
     Long editOrderStatus(@RequestBody OrderStatus orderStatus);
 
-    @PostMapping(path = "/api/orderStatus/remove/{id}")
+    @DeleteMapping(path = "/api/orderStatus/remove/{id}")
     Long removeOrderStatus(@PathVariable Long id);
 
     @GetMapping(path = "/api/orderStatus/{id}")
@@ -168,10 +165,10 @@ public interface BasicDataService {
     @PostMapping(path = "/api/packingType/add")
     Long addPackingType(@RequestBody PackingType packingType);
 
-    @PostMapping(path = "/api/packingType/edit")
+    @PutMapping(path = "/api/packingType/edit")
     Long editPackingType(@RequestBody PackingType packingType);
 
-    @PostMapping(path = "/api/packingType/remove/{id}")
+    @DeleteMapping(path = "/api/packingType/remove/{id}")
     Long removePackingType(@PathVariable Long id);
 
     @GetMapping(path = "/api/packingType/{id}")
@@ -183,10 +180,10 @@ public interface BasicDataService {
     @PostMapping(path = "/api/plaqueTagPersianPart/add")
     Long addPlaqueTagPersianPart(@RequestBody PlaqueTagPersianPart plaqueTagPersianPart);
 
-    @PostMapping(path = "/api/plaqueTagPersianPart/edit")
+    @PutMapping(path = "/api/plaqueTagPersianPart/edit")
     Long editPlaqueTagPersianPart(@RequestBody PlaqueTagPersianPart plaqueTagPersianPart);;
 
-    @PostMapping(path = "/api/plaqueTagPersianPart/remove/{id}")
+    @DeleteMapping(path = "/api/plaqueTagPersianPart/remove/{id}")
     Long removePlaqueTagPersianPart(@PathVariable Long id);;
 
     @GetMapping(path = "/api/plaqueTagPersianPart/{id}")
@@ -198,10 +195,10 @@ public interface BasicDataService {
     @PostMapping(path = "/api/requestStatus/add")
     Long addRequestStatus(@RequestBody RequestStatus requestStatus);
 
-    @PostMapping(path = "/api/requestStatus/edit")
+    @PutMapping(path = "/api/requestStatus/edit")
     Long editRequestStatus(@RequestBody RequestStatus requestStatus);
 
-    @PostMapping(path = "/api/requestStatus/remove/{id}")
+    @DeleteMapping(path = "/api/requestStatus/remove/{id}")
     Long removeRequestStatus(@PathVariable Long id);
 
     @GetMapping(path = "/api/requestStatus/{id}")

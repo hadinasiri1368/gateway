@@ -47,12 +47,12 @@ public class AuthenticationAPI {
         return authenticationService.addUser(user);
     }
 
-    @PostMapping(path = "/api/user/edit")
+    @PutMapping(path = "/api/user/edit")
     Long editUser(@RequestBody User user) {
         return authenticationService.editUser(user);
     }
 
-    @PostMapping(path = "/api/user/remove/{id}")
+    @DeleteMapping(path = "/api/user/remove/{id}")
     Long removeUser(@PathVariable Long id) {
         return authenticationService.removeUser(id);
     }
@@ -77,12 +77,12 @@ public class AuthenticationAPI {
         return authenticationService.addPermission(permission);
     }
 
-    @PostMapping(path = "/api/permission/edit")
+    @PutMapping(path = "/api/permission/edit")
     Long editPermission(@RequestBody Permission permission) {
         return authenticationService.editPermission(permission);
     }
 
-    @PostMapping(path = "/api/permission/remove/{id}")
+    @DeleteMapping(path = "/api/permission/remove/{id}")
     Long removePermission(@PathVariable Long id) {
         return authenticationService.removePermission(id);
     }
@@ -102,12 +102,12 @@ public class AuthenticationAPI {
         return authenticationService.addRole(role);
     }
 
-    @PostMapping(path = "/api/role/edit")
+    @PutMapping(path = "/api/role/edit")
     public Long editRole(@RequestBody Role role) {
         return authenticationService.editRole(role);
     }
 
-    @PostMapping(path = "/api/role/remove/{id}")
+    @DeleteMapping(path = "/api/role/remove/{id}")
     Long removeRole(@PathVariable Long id) {
         return authenticationService.removeRole(id);
     }
@@ -122,12 +122,12 @@ public class AuthenticationAPI {
         return authenticationService.addRolePermission(rolePermissionDto);
     }
 
-    @PostMapping(path = "/api/rolePermission/edit")
+    @PutMapping(path = "/api/rolePermission/edit")
     Long editRolePermission(@RequestBody RolePermissionDto rolePermissionDto) {
         return authenticationService.editRolePermission(rolePermissionDto);
     }
 
-    @PostMapping(path = "/api/rolePermission/remove/{id}")
+    @DeleteMapping(path = "/api/rolePermission/remove/{id}")
     Long removeRolePermission(@PathVariable Long id) {
         return authenticationService.removeRolePermission(id);
     }
@@ -147,12 +147,12 @@ public class AuthenticationAPI {
         return authenticationService.addUserGroup(userGroup);
     }
 
-    @PostMapping(path = "/api/userGroup/edit")
+    @PutMapping(path = "/api/userGroup/edit")
     Long editUserGroup(@RequestBody UserGroup userGroup) {
         return authenticationService.editUserGroup(userGroup);
     }
 
-    @PostMapping(path = "/api/userGroup/remove/{id}")
+    @DeleteMapping(path = "/api/userGroup/remove/{id}")
     Long removeUserGroup(@PathVariable Long id) {
         return authenticationService.removeUserGroup(id);
     }
@@ -167,12 +167,12 @@ public class AuthenticationAPI {
         return authenticationService.addUserGroupDetail(userGroupDetailDto);
     }
 
-    @PostMapping(path = "/api/userGroupDetail/edit")
+    @PutMapping(path = "/api/userGroupDetail/edit")
     Long editUserGroupDetail(@RequestBody UserGroupDetailDto userGroupDetailDto) {
         return authenticationService.editUserGroupDetail(userGroupDetailDto);
     }
 
-    @PostMapping(path = "/api/userGroupDetail/remove/{id}")
+    @DeleteMapping(path = "/api/userGroupDetail/remove/{id}")
     Long removeUserGroupDetail(@PathVariable Long id) {
         return authenticationService.removeUserGroupDetail(id);
     }
@@ -192,12 +192,12 @@ public class AuthenticationAPI {
         return authenticationService.addUserGroupRole(userGroupRoleDto);
     }
 
-    @PostMapping(path = "/api/userGroupRole/edit")
+    @PutMapping(path = "/api/userGroupRole/edit")
     Long editUserGroupRole(@RequestBody UserGroupRoleDto userGroupRoleDto) {
         return authenticationService.editUserGroupRole(userGroupRoleDto);
     }
 
-    @PostMapping(path = "/api/userGroupRole/remove/{id}")
+    @DeleteMapping(path = "/api/userGroupRole/remove/{id}")
     Long removeUserGroupRole(@PathVariable Long id) {
         return authenticationService.removeUserGroupRole(id);
     }
@@ -217,12 +217,12 @@ public class AuthenticationAPI {
         return authenticationService.addUserPermission(userPermissionDto);
     }
 
-    @PostMapping(path = "/api/userPermission/edit")
+    @PutMapping(path = "/api/userPermission/edit")
     Long editUserPermission(@RequestBody UserPermissionDto userPermissionDto) {
         return authenticationService.editUserPermission(userPermissionDto);
     }
 
-    @PostMapping(path = "/api/userPermission/remove/{id}")
+    @DeleteMapping(path = "/api/userPermission/remove/{id}")
     Long removeUserPermission(@PathVariable Long id) {
         return authenticationService.removeUserPermission(id);
     }
@@ -242,12 +242,12 @@ public class AuthenticationAPI {
         return authenticationService.addUserRole(userRoleDto);
     }
 
-    @PostMapping(path = "/api/userRole/edit")
+    @PutMapping(path = "/api/userRole/edit")
     Long editUserRole(@RequestBody UserRoleDto userRoleDto) {
         return authenticationService.editUserRole(userRoleDto);
     }
 
-    @PostMapping(path = "/api/userRole/remove/{id}")
+    @DeleteMapping(path = "/api/userRole/remove/{id}")
     Long removeUserRole(@PathVariable Long id) {
         return authenticationService.removeUserRole(id);
     }
