@@ -29,10 +29,10 @@ public interface AuthenticationService {
     @PostMapping(path = "/api/user/add")
     Long addUser(@RequestBody User user);
 
-    @PostMapping(path = "/api/user/edit")
+    @PutMapping(path = "/api/user/edit")
     Long editUser(@RequestBody User user);
 
-    @PostMapping(path = "/api/user/remove/{id}")
+    @DeleteMapping(path = "/api/user/remove/{id}")
     Long removeUser(@PathVariable Long id);
 
     @GetMapping(path = "/api/user/{id}")
@@ -47,10 +47,10 @@ public interface AuthenticationService {
     @PostMapping(path = "/api/permission/add")
     Long addPermission(@RequestBody Permission permission);
 
-    @PostMapping(path = "/api/permission/edit")
+    @PutMapping(path = "/api/permission/edit")
     Long editPermission(@RequestBody Permission permission);
 
-    @PostMapping(path = "/api/permission/remove/{id}")
+    @DeleteMapping(path = "/api/permission/remove/{id}")
     Long removePermission(@PathVariable Long id);
 
     @GetMapping(path = "/api/permission/{id}")
@@ -62,10 +62,10 @@ public interface AuthenticationService {
     @PostMapping(path = "/api/role/add")
     Long addRole(@RequestBody Role role);
 
-    @PostMapping(path = "/api/role/edit")
+    @PutMapping(path = "/api/role/edit")
     Long editRole(@RequestBody Role role);
 
-    @PostMapping(path = "/api/role/remove/{id}")
+    @DeleteMapping(path = "/api/role/remove/{id}")
     Long removeRole(@PathVariable Long id);
 
     @GetMapping(path = "/api/role/{id}")
@@ -74,10 +74,10 @@ public interface AuthenticationService {
     @PostMapping(path = "/api/rolePermission/add")
     Long addRolePermission(@RequestBody RolePermissionDto rolePermissionDto);
 
-    @PostMapping(path = "/api/rolePermission/edit")
+    @PutMapping(path = "/api/rolePermission/edit")
     Long editRolePermission(@RequestBody RolePermissionDto rolePermissionDto);
 
-    @PostMapping(path = "/api/rolePermission/remove/{id}")
+    @DeleteMapping(path = "/api/rolePermission/remove/{id}")
     Long removeRolePermission(@PathVariable Long id);
 
     @GetMapping(path = "/api/rolePermission/{id}")
@@ -89,10 +89,10 @@ public interface AuthenticationService {
     @PostMapping(path = "/api/userGroup/add")
     Long addUserGroup(@RequestBody UserGroup userGroup);
 
-    @PostMapping(path = "/api/userGroup/edit")
+    @PutMapping(path = "/api/userGroup/edit")
     Long editUserGroup(@RequestBody UserGroup userGroup);
 
-    @PostMapping(path = "/api/userGroup/remove/{id}")
+    @DeleteMapping(path = "/api/userGroup/remove/{id}")
     Long removeUserGroup(@PathVariable Long id);
 
     @GetMapping(path = "/api/userGroup")
@@ -101,10 +101,10 @@ public interface AuthenticationService {
     @PostMapping(path = "/api/userGroupDetail/add")
     Long addUserGroupDetail(@RequestBody UserGroupDetailDto userGroupDetailDto);
 
-    @PostMapping(path = "/api/userGroupDetail/edit")
+    @PutMapping(path = "/api/userGroupDetail/edit")
     Long editUserGroupDetail(@RequestBody UserGroupDetailDto userGroupDetailDto);
 
-    @PostMapping(path = "/api/userGroupDetail/remove/{id}")
+    @DeleteMapping(path = "/api/userGroupDetail/remove/{id}")
     Long removeUserGroupDetail(@PathVariable Long id);
 
     @GetMapping(path = "/api/userGroupDetail/{id}")
@@ -116,10 +116,10 @@ public interface AuthenticationService {
     @PostMapping(path = "/api/userGroupRole/add")
     Long addUserGroupRole(@RequestBody UserGroupRoleDto userGroupRoleDto);
 
-    @PostMapping(path = "/api/userGroupRole/edit")
+    @PutMapping(path = "/api/userGroupRole/edit")
     Long editUserGroupRole(@RequestBody UserGroupRoleDto userGroupRoleDto);
 
-    @PostMapping(path = "/api/userGroupRole/remove/{id}")
+    @DeleteMapping(path = "/api/userGroupRole/remove/{id}")
     Long removeUserGroupRole(@PathVariable Long id);
 
     @GetMapping(path = "/api/userGroupRole/{id}")
@@ -131,10 +131,10 @@ public interface AuthenticationService {
     @PostMapping(path = "/api/userPermission/add")
     Long addUserPermission(@RequestBody UserPermissionDto userPermissionDto);
 
-    @PostMapping(path = "/api/userPermission/edit")
+    @PutMapping(path = "/api/userPermission/edit")
     Long editUserPermission(@RequestBody UserPermissionDto userPermissionDto);
 
-    @PostMapping(path = "/api/userPermission/remove/{id}")
+    @DeleteMapping(path = "/api/userPermission/remove/{id}")
     Long removeUserPermission(@PathVariable Long id);
 
     @GetMapping(path = "/api/userPermission/{id}")
@@ -146,10 +146,10 @@ public interface AuthenticationService {
     @PostMapping(path = "/api/userRole/add")
     Long addUserRole(@RequestBody UserRoleDto userRoleDto);
 
-    @PostMapping(path = "/api/userRole/edit")
+    @PutMapping(path = "/api/userRole/edit")
     Long editUserRole(@RequestBody UserRoleDto userRoleDto);
 
-    @PostMapping(path = "/api/userRole/remove/{id}")
+    @DeleteMapping(path = "/api/userRole/remove/{id}")
     Long removeUserRole(@PathVariable Long id);
 
     @GetMapping(path = "/api/userRole/{id}")

@@ -14,10 +14,10 @@ public interface TransportService {
     @PostMapping(path = "/api/person/add")
     Long addPerson(@RequestBody Person Person);
 
-    @PostMapping(path = "/api/person/edit")
+    @PutMapping(path = "/api/person/edit")
     Long editPerson(@RequestBody Person person);
 
-    @PostMapping(path = "/api/person/remove/{id}")
+    @DeleteMapping(path = "/api/person/remove/{id}")
     Long removePerson(@PathVariable Long id);
 
     @GetMapping(path = "/api/person/{id}")
@@ -29,10 +29,10 @@ public interface TransportService {
     @PostMapping(path = "/api/driver/add")
     Long addDriver(@RequestBody DriverDto driverDto);
 
-    @PostMapping(path = "/api/driver/edit")
+    @PutMapping(path = "/api/driver/edit")
     Long editDriver(@RequestBody DriverDto driverDto);
 
-    @PostMapping(path = "/api/driver/remove/{id}")
+    @DeleteMapping(path = "/api/driver/remove/{id}")
     Long removeDriver(@PathVariable Long id);
 
     @GetMapping(path = "/api/driver/{id}")
@@ -44,10 +44,10 @@ public interface TransportService {
     @PostMapping(path = "/api/car/add")
     Long addCar(@RequestBody CarDto carDto);
 
-    @PostMapping(path = "/api/car/edit")
+    @PutMapping(path = "/api/car/edit")
     Long editCar(@RequestBody CarDto carDto);
 
-    @PostMapping(path = "/api/car/remove/{id}")
+    @DeleteMapping(path = "/api/car/remove/{id}")
     Long removeCar(@PathVariable Long id);
 
     @GetMapping(path = "/api/car/{id}")
@@ -59,10 +59,10 @@ public interface TransportService {
     @PostMapping(path = "/api/plaque/add")
     Long addPlaque(@RequestBody PlaqueDto plaqueDto);
 
-    @PostMapping(path = "/api/plaque/edit")
+    @PutMapping(path = "/api/plaque/edit")
     Long editPlaque(@RequestBody PlaqueDto plaqueDto);
 
-    @PostMapping(path = "/api/plaque/remove/{id}")
+    @DeleteMapping(path = "/api/plaque/remove/{id}")
     Long removePlaque(@PathVariable Long id);
 
     @GetMapping(path = "/api/plaque/{id}")
@@ -74,10 +74,10 @@ public interface TransportService {
     @PostMapping(path = "/api/generalLedger/add")
     Long addGeneralLedger(@RequestBody GeneralLedger generalLedger);
 
-    @PostMapping(path = "/api/generalLedger/edit")
+    @PutMapping(path = "/api/generalLedger/edit")
     Long editGeneralLedger(@RequestBody GeneralLedger generalLedger);
 
-    @PostMapping(path = "/api/generalLedger/remove/{id}")
+    @DeleteMapping(path = "/api/generalLedger/remove/{id}")
     Long removeGeneralLedger(@PathVariable Long id);
 
     @GetMapping(path = "/api/generalLedger/{id}")
@@ -89,10 +89,10 @@ public interface TransportService {
     @PostMapping(path = "/api/subsidiaryLedger/add")
     Long addSubsidiaryLedger(@RequestBody SubsidiaryLedgerDto subsidiaryLedgerDto);
 
-    @PostMapping(path = "/api/subsidiaryLedger/edit")
+    @PutMapping(path = "/api/subsidiaryLedger/edit")
     Long editSubsidiaryLedger(@RequestBody SubsidiaryLedgerDto subsidiaryLedgerDto);
 
-    @PostMapping(path = "/api/subsidiaryLedger/remove/{id}")
+    @DeleteMapping(path = "/api/subsidiaryLedger/remove/{id}")
     Long removeSubsidiaryLedger(@PathVariable Long id);
 
     @GetMapping(path = "/api/subsidiaryLedger/{id}")
@@ -104,10 +104,10 @@ public interface TransportService {
     @PostMapping(path = "/api/detailLedger/add")
     Long addDetailLedger(@RequestBody DetailLedgerDto detailLedgerDto);
 
-    @PostMapping(path = "/api/detailLedger/edit")
+    @PutMapping(path = "/api/detailLedger/edit")
     Long editDetailLedger(@RequestBody DetailLedgerDto detailLedgerDto);
 
-    @PostMapping(path = "/api/detailLedger/remove/{id}")
+    @DeleteMapping(path = "/api/detailLedger/remove/{id}")
     Long removeDetailLedger(@PathVariable Long id);
 
     @GetMapping(path = "/api/detailLedger/{id}")
@@ -119,19 +119,19 @@ public interface TransportService {
     @PostMapping(path = "/api/voucher/add")
     Long addVoucher(@RequestBody VoucherDto voucherDto);
 
-    @PostMapping(path = "/api/voucher/edit")
+    @PutMapping(path = "/api/voucher/edit")
     Long editVoucher(@RequestBody Voucher voucher);
 
-    @PostMapping(path = "/api/voucherDetail/edit")
+    @PutMapping(path = "/api/voucherDetail/edit")
     Long editVoucherDetail(@RequestBody VoucherDetailDto voucherDetailDto);
 
-    @PostMapping(path = "/api/voucherDetailList/edit")
+    @PutMapping(path = "/api/voucherDetailList/edit")
     Long editVoucherDetailList(@RequestBody List<VoucherDetailDto> voucherDetailDtos);
 
-    @PostMapping(path = "/api/voucher/remove/{id}")
+    @DeleteMapping(path = "/api/voucher/remove/{id}")
     Long removeVoucher(@PathVariable Long id);
 
-    @PostMapping(path = "/api/voucherDetail/remove")
+    @DeleteMapping(path = "/api/voucherDetail/remove")
     Long removeVoucherDetail(@RequestBody List<VoucherDetailDto> voucherDetailDtos);
 
     @GetMapping(path = "/api/voucher/{id}")
@@ -149,7 +149,7 @@ public interface TransportService {
     @PostMapping(path = "/api/orderImage/add", consumes = {"multipart/form-data"})
     Long addOrderImage(@RequestParam("orderId") Long orderId, @RequestParam("image") MultipartFile[] multipartFiles);
 
-    @PostMapping(path = "/api/order/remove/{id}")
+    @DeleteMapping(path = "/api/order/remove/{id}")
     Long removeOrder(@PathVariable Long id);
 
     @GetMapping(path = "/api/order/{id}")
@@ -170,10 +170,10 @@ public interface TransportService {
     @PostMapping(path = "/api/userCompany/add")
     Long addUserCompany(@RequestBody UserCompanyDto userCompanyDto);
 
-    @PostMapping(path = "/api/userCompany/edit")
+    @PutMapping(path = "/api/userCompany/edit")
     Long editUserCompany(@RequestBody UserCompanyDto userCompanyDto);
 
-    @PostMapping(path = "/api/userCompany/remove/{id}")
+    @DeleteMapping(path = "/api/userCompany/remove/{id}")
     Long removeGUserCompany(@PathVariable Long id);
 
     @GetMapping(path = "/api/userCompany/{id}")
