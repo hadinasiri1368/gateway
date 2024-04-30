@@ -42,6 +42,11 @@ public class AuthenticationAPI {
         return authenticationService.listUser();
     }
 
+    @GetMapping(path = "/api/userPerson")
+    List<UserPersonDto> listUserPerson() {
+        return authenticationService.userPerson();
+    }
+
     @PostMapping(path = "/api/user/add")
     Long addUser(@RequestBody User user) {
         return authenticationService.addUser(user);

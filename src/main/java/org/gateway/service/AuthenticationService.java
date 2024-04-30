@@ -26,6 +26,9 @@ public interface AuthenticationService {
     @GetMapping(path = "/api/user")
     List<User> listUser();
 
+    @GetMapping(path = "/api/userPerson")
+    List<UserPersonDto> userPerson();
+
     @PostMapping(path = "/api/user/add")
     Long addUser(@RequestBody User user);
 
