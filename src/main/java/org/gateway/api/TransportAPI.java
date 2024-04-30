@@ -1,6 +1,7 @@
 package org.gateway.api;
 
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import jakarta.servlet.http.HttpServletRequest;
 import org.gateway.dto.*;
 import org.gateway.model.*;
 import org.gateway.service.TransportService;
@@ -282,28 +283,60 @@ public class TransportAPI {
     }
 
     @PutMapping(path = "/api/userCompany/edit")
-    Long editUserCompany(@RequestBody UserCompanyDto userCompanyDto){
+    Long editUserCompany(@RequestBody UserCompanyDto userCompanyDto) {
         return transportService.editUserCompany(userCompanyDto);
     }
 
     @DeleteMapping(path = "/api/userCompany/remove/{id}")
-    Long removeGUserCompany(@PathVariable Long id){
+    Long removeGUserCompany(@PathVariable Long id) {
         return transportService.removeGUserCompany(id);
     }
 
     @GetMapping(path = "/api/userCompany/{id}")
-    UserCompany getUserCompany(@PathVariable Long id){
+    UserCompany getUserCompany(@PathVariable Long id) {
         return transportService.getUserCompany(id);
     }
 
     @GetMapping(path = "/api/getUserCompanyByUserId/{userId}")
-    List<UserCompany> getCompany(@PathVariable Long userId){
+    List<UserCompany> getCompany(@PathVariable Long userId) {
         return transportService.getUserCompanyByUserId(userId);
     }
 
     @GetMapping(path = "/api/userCompany")
-    List<UserCompany> listUserCompany(){
+    List<UserCompany> listUserCompany() {
         return transportService.listUserCompany();
     }
+
+    @PostMapping(path = "/api/companyDriver/add")
+    Long addCompanyDriver(@RequestBody CompanyDriverDto companyDriverDto) {
+        return transportService.addCompanyDriver(companyDriverDto);
+    }
+
+    @PutMapping(path = "/api/companyDriver/edit")
+    Long editCompanyDriver(@RequestBody CompanyDriverDto companyDriverDto) {
+        return transportService.editCompanyDriver(companyDriverDto);
+    }
+
+    @DeleteMapping(path = "/api/companyDriver/remove/{id}")
+    Long removeCompanyDriver(@PathVariable Long id) {
+        return transportService.removeCompanyDriver(id);
+    }
+
+    @GetMapping(path = "/api/companyDriver/{id}")
+    CompanyDriver getCompanyDriver(@PathVariable Long id) {
+        return transportService.getCompanyDriver(id);
+    }
+
+    @GetMapping(path = "/api/companyDriver")
+    List<CompanyDriver> listCompanyDriver(){
+        return transportService.listCompanyDriver();
+    }
+
+    @PostMapping(path = "/api/companyDriver/changeRequest")
+    ChangeRequestDto changeRequestCompanyDriver (@RequestBody ChangeRequestDto changeRequestDto){
+        return transportService.changeRequestCompanyDriver(changeRequestDto);
+    }
+
+
 
 }

@@ -185,6 +185,24 @@ public interface TransportService {
     @GetMapping(path = "/api/userCompany")
     List<UserCompany> listUserCompany();
 
+    @PostMapping(path = "/api/companyDriver/add")
+    Long addCompanyDriver(@RequestBody CompanyDriverDto companyDriverDto);
+
+    @PutMapping(path = "/api/companyDriver/edit")
+    Long editCompanyDriver(@RequestBody CompanyDriverDto companyDriverDto);
+
+    @DeleteMapping(path = "/api/companyDriver/remove/{id}")
+    Long removeCompanyDriver(@PathVariable Long id);
+
+    @GetMapping(path = "/api/companyDriver/{id}")
+    CompanyDriver getCompanyDriver(@PathVariable Long id);
+
+    @GetMapping(path = "/api/companyDriver")
+    List<CompanyDriver> listCompanyDriver();
+
+    @PostMapping(path = "/api/companyDriver/changeRequest")
+    ChangeRequestDto changeRequestCompanyDriver (@RequestBody ChangeRequestDto changeRequestDto);
+
 }
 
 
