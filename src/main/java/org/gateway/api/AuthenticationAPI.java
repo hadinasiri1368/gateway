@@ -266,4 +266,21 @@ public class AuthenticationAPI {
     List<UserRole> listUserRole() {
         return authenticationService.listUserRole();
     }
+
+    @GetMapping(path = "/api/userPermissionPerUser/{userId}")
+    List<UserPermission> userPermissions(@PathVariable Long userId) {
+        return authenticationService.userPermissions(userId);
+    }
+
+    @GetMapping(path = "/api/userRolePerUser/{userId}")
+    List<UserRole> userRoles(@PathVariable Long userId) {
+        return authenticationService.userRoles(userId);
+    }
+
+    @GetMapping(path = "/api/userGroupDetailPerUser/{userId}")
+    List<UserGroupDetail> userGroupDetails(@PathVariable Long userId) {
+        return authenticationService.userGroupDetails(userId);
+    }
+
+
 }
