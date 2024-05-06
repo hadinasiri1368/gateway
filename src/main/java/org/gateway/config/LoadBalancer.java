@@ -2,6 +2,7 @@ package org.gateway.config;
 
 import feign.Request;
 import jakarta.servlet.http.HttpServletRequest;
+import org.gateway.common.CommonUtils;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.openfeign.loadbalancer.LoadBalancerFeignRequestTransformer;
 import org.springframework.context.annotation.Bean;
@@ -27,6 +28,7 @@ public class LoadBalancer {
                         String name = headerNames.nextElement();
                         String value = httpServletRequest.getHeader(name);
                         headers.put(name, Collections.singletonList(value));
+//                        headers.put("X-UUID", Collections.singletonList(CommonUtils.generateType1UUID().toString()));
                     }
                 }
                 return Request.create(request.httpMethod(), request.url(), headers, request.body(), request.charset(),
