@@ -161,4 +161,13 @@ public interface AuthenticationService {
     @GetMapping(path = "/api/userRole")
     List<UserRole> listUserRole();
 
+    @GetMapping(path = "/api/userPermissionPerUser/{userId}")
+    List<UserPermission> userPermissions(@PathVariable Long userId);
+
+    @GetMapping(path = "/api/userRolePerUser/{userId}")
+    List<UserRole> userRoles(@PathVariable Long userId);
+
+    @GetMapping(path = "/api/userGroupDetailPerUser/{userId}")
+    List<UserGroupDetail> userGroupDetails(@PathVariable Long userId);
+
 }
