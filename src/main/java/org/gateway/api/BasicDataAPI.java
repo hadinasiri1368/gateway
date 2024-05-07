@@ -263,7 +263,7 @@ public class BasicDataAPI {
     }
 
     @GetMapping(path = "/api/orderStatus")
-    public Page<OrderStatus> listOrderStatus(@RequestParam(value = "page" , required = false) Integer page , @RequestParam(value = "size" ,required = false) Integer size) {
+    Page<OrderStatus> listOrderStatus(@RequestParam(value = "page" , required = false) Integer page , @RequestParam(value = "size" ,required = false) Integer size) {
         return basicDataService.listOrderStatus(page, size);
     }
 
