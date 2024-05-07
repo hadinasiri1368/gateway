@@ -41,7 +41,7 @@ public interface BasicDataService {
     CarCapacity getCarCapacity(@PathVariable Long id);
 
     @GetMapping(path = "/api/carCapacity")
-    List<CarCapacity> listCarCapacity();
+    Page<CarCapacity> listCarCapacity(@RequestParam("page") Integer page, @RequestParam("size") Integer size);
 
     @PostMapping(path = "/api/carGroup/add")
     Long addCarGroup(@RequestBody CarGroupDto carGroupDto);
@@ -56,7 +56,7 @@ public interface BasicDataService {
     CarGroup getCarGroup(@PathVariable Long id);
 
     @GetMapping(path = "/api/carGroup")
-    List<CarGroup> listCarGroup();
+    Page<CarGroup> listCarGroup(@RequestParam(value = "page" , required = false) Integer page , @RequestParam(value = "size" ,required = false) Integer size);
 
     @PostMapping(path = "/api/carProperty/add")
     Long addCarProperty(@RequestBody CarProperty carProperty);
@@ -71,7 +71,7 @@ public interface BasicDataService {
     CarProperty getCarProperty(@PathVariable Long id);
 
     @GetMapping(path = "/api/carProperty")
-    List<CarProperty> listCarProperty();
+    Page<CarProperty> listCarProperty(@RequestParam(value = "page" , required = false) Integer page , @RequestParam(value = "size" ,required = false) Integer size);
 
     @PostMapping(path = "/api/countryDivision/add")
     Long addCountryDivision(@RequestBody CountryDivisionDto countryDivisionDto);
@@ -86,7 +86,7 @@ public interface BasicDataService {
     CountryDivision getCountryDivision(@PathVariable Long id);
 
     @GetMapping(path = "/api/countryDivision")
-    List<CountryDivision> listCountryDivision();
+    Page<CountryDivision> listCountryDivision(@RequestParam(value = "page" , required = false) Integer page , @RequestParam(value = "size" ,required = false) Integer size);
 
     @PostMapping(path = "/api/driverLicenseType/add")
     Long addDriverLicenseType(@RequestBody DriverLicenseType driverLicenseType);
@@ -101,7 +101,7 @@ public interface BasicDataService {
     DriverLicenseType getDriverLicenseType(@PathVariable Long id);
 
     @GetMapping(path = "/api/driverLicenseType")
-    List<DriverLicenseType> listDriverLicenseType();
+    Page<DriverLicenseType> listDriverLicenseType(@RequestParam(value = "page" , required = false) Integer page , @RequestParam(value = "size" ,required = false) Integer size);
 
     @PostMapping(path = "/api/fleetType/add")
     Long addFleetType(@RequestBody FleetType fleetType);
@@ -116,7 +116,7 @@ public interface BasicDataService {
     FleetType getFleetType(@PathVariable Long id);
 
     @GetMapping(path = "/api/fleetType")
-    List<FleetType> listFleetType();
+    Page<FleetType> listFleetType(@RequestParam(value = "page" , required = false) Integer page , @RequestParam(value = "size" ,required = false) Integer size);
 
     @PostMapping(path = "/api/fuelType/add")
     Long addFuelType(@RequestBody FuelType fuelType);
@@ -131,7 +131,7 @@ public interface BasicDataService {
     FuelType getFuelType(@PathVariable Long id);
 
     @GetMapping(path = "/api/fuelType")
-    List<FuelType> listFuelType();
+    Page<FuelType> listFuelType(@RequestParam(value = "page" , required = false) Integer page , @RequestParam(value = "size" ,required = false) Integer size);
 
     @PostMapping(path = "/api/loadingType/add")
     Long addLoadingType(@RequestBody LoadingType loadingType);
@@ -146,7 +146,7 @@ public interface BasicDataService {
     LoadingType getLoadingType(@PathVariable Long id);
 
     @GetMapping(path = "/api/loadingType")
-    List<LoadingType> listLoadingType();
+    Page<LoadingType> listLoadingType(@RequestParam(value = "page" , required = false) Integer page , @RequestParam(value = "size" ,required = false) Integer size);
 
     @PostMapping(path = "/api/orderStatus/add")
     Long addOrderStatus(@RequestBody OrderStatus orderStatus);
@@ -161,7 +161,7 @@ public interface BasicDataService {
     OrderStatus getOrderStatus(@PathVariable Long id);
 
     @GetMapping(path = "/api/orderStatus")
-    List<OrderStatus> listOrderStatus();
+    Page<OrderStatus> listOrderStatus(@RequestParam(value = "page" , required = false) Integer page , @RequestParam(value = "size" ,required = false) Integer size);
 
     @PostMapping(path = "/api/packingType/add")
     Long addPackingType(@RequestBody PackingType packingType);
@@ -176,7 +176,7 @@ public interface BasicDataService {
     PackingType getPackingType(@PathVariable Long id);
 
     @GetMapping(path = "/api/packingType")
-    List<PackingType> listPackingType();
+    Page<PackingType> listPackingType(@RequestParam(value = "page" , required = false) Integer page , @RequestParam(value = "size" ,required = false) Integer size);
 
     @PostMapping(path = "/api/plaqueTagPersianPart/add")
     Long addPlaqueTagPersianPart(@RequestBody PlaqueTagPersianPart plaqueTagPersianPart);
@@ -191,7 +191,7 @@ public interface BasicDataService {
     PlaqueTagPersianPart getPlaqueTagPersianPart(@PathVariable Long id);
 
     @GetMapping(path = "/api/plaqueTagPersianPart")
-    List<PlaqueTagPersianPart> listPlaqueTagPersianPart();
+    Page<PlaqueTagPersianPart> listPlaqueTagPersianPart(@RequestParam(value = "page" , required = false) Integer page , @RequestParam(value = "size" ,required = false) Integer size);
 
     @PostMapping(path = "/api/requestStatus/add")
     Long addRequestStatus(@RequestBody RequestStatus requestStatus);
@@ -206,7 +206,7 @@ public interface BasicDataService {
     RequestStatus getRequestStatus(@PathVariable Long id);
 
     @GetMapping(path = "/api/requestStatus")
-    List<RequestStatus> listRequestStatus();
+    Page<RequestStatus> listRequestStatus(@RequestParam(value = "page" , required = false) Integer page , @RequestParam(value = "size" ,required = false) Integer size);
 
 }
 
