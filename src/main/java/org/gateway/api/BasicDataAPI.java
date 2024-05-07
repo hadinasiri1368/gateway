@@ -6,6 +6,7 @@ import org.gateway.dto.CountryDivisionDto;
 import org.gateway.model.*;
 import org.gateway.service.BasicDataService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -37,8 +38,8 @@ public class BasicDataAPI {
     }
 
     @GetMapping(path = "/api/baseInfoGood")
-    List<BaseInfoGood> listBaseInfoGood() {
-        return basicDataService.listBaseInfoGood();
+    Page<BaseInfoGood> listBaseInfoGood(@RequestParam(value = "page" , required = false) Integer page , @RequestParam(value = "size" ,required = false) Integer size) {
+        return basicDataService.listBaseInfoGood(page,size);
     }
 
     @PostMapping(path = "/api/carCapacity/add")

@@ -4,6 +4,7 @@ import org.gateway.dto.CarGroupDto;
 import org.gateway.dto.CountryDivisionDto;
 import org.gateway.model.*;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,7 +26,7 @@ public interface BasicDataService {
     BaseInfoGood getBaseInfoGood(@PathVariable Long id);
 
     @GetMapping(path = "/api/baseInfoGood")
-    List<BaseInfoGood> listBaseInfoGood();
+    Page<BaseInfoGood> listBaseInfoGood(@RequestParam("page") Integer page, @RequestParam("size") Integer size);
 
     @PostMapping(path = "/api/carCapacity/add")
     Long addCarCapacity(@RequestBody CarCapacity carCapacity);
