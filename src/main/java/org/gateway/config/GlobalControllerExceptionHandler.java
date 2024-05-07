@@ -44,10 +44,10 @@ public class GlobalControllerExceptionHandler {
         ExceptionDto exceptionDto = CommonUtils.getException(e);
         log.info("RequestURL:" + request.getRequestURL() + "  UUID=" + request.getHeader("X-UUID") + "  ServiceInternalServerError:" + (CommonUtils.isNull(exceptionDto) ? e.getMessage().split("]:")[1] : exceptionDto.getErrorMessage()));
         return new ResponseEntity<>(ExceptionDto.builder()
-                .errorMessage(CommonUtils.isNull(exceptionDto) ? "internal server error" : exceptionDto.getErrorMessage())
-                .errorCode(CommonUtils.isNull(exceptionDto) ? HttpStatus.INTERNAL_SERVER_ERROR.value() : exceptionDto.getErrorCode())
+                .errorMessage(CommonUtils.isNull(exceptionDto) ? "unauthorized exception" : exceptionDto.getErrorMessage())
+                .errorCode(CommonUtils.isNull(exceptionDto) ? HttpStatus.UNAUTHORIZED.value() : exceptionDto.getErrorCode())
                 .uuid(request.getHeader("X-UUID"))
-                .errorStatus(HttpStatus.INTERNAL_SERVER_ERROR.value())
-                .build(), HttpStatus.INTERNAL_SERVER_ERROR);
+                .errorStatus(CommonUtils.isNull(exceptionDto) ? HttpStatus.UNAUTHORIZED.value() : HttpStatus.INTERNAL_SERVER_ERROR.value())
+                .build(), CommonUtils.isNull(exceptionDto) ? HttpStatus.UNAUTHORIZED : HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
