@@ -3,6 +3,7 @@ package org.gateway.service;
 import org.gateway.dto.*;
 import org.gateway.model.*;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,7 +25,7 @@ public interface TransportService {
     Person getPerson(@PathVariable Long id);
 
     @GetMapping(path = "/api/person")
-    List<Person> listPerson();
+    Page<Person> listPerson(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size);
 
     @PostMapping(path = "/api/driver/add")
     Long addDriver(@RequestBody DriverDto driverDto);
@@ -39,7 +40,7 @@ public interface TransportService {
     Driver getDriver(@PathVariable Long id);
 
     @GetMapping(path = "/api/driver")
-    List<Driver> listDriver();
+    Page<Driver> listDriver(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size);
 
     @PostMapping(path = "/api/car/add")
     Long addCar(@RequestBody CarDto carDto);
@@ -54,7 +55,7 @@ public interface TransportService {
     Car getCar(@PathVariable Long id);
 
     @GetMapping(path = "/api/car")
-    List<Car> listCar();
+    Page<Car> listCar(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size);
 
     @PostMapping(path = "/api/plaque/add")
     Long addPlaque(@RequestBody PlaqueDto plaqueDto);
@@ -69,7 +70,7 @@ public interface TransportService {
     Plaque getPlaque(@PathVariable Long id);
 
     @GetMapping(path = "/api/plaque")
-    List<Plaque> listPlaque();
+    Page<Plaque> listPlaque(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size);
 
     @PostMapping(path = "/api/generalLedger/add")
     Long addGeneralLedger(@RequestBody GeneralLedger generalLedger);
@@ -99,7 +100,7 @@ public interface TransportService {
     SubsidiaryLedger getSubsidiaryLedger(@PathVariable Long id);
 
     @GetMapping(path = "/api/subsidiaryLedger")
-    List<SubsidiaryLedger> listSubsidiaryLedger();
+    Page<SubsidiaryLedger> listSubsidiaryLedger(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size);
 
     @PostMapping(path = "/api/detailLedger/add")
     Long addDetailLedger(@RequestBody DetailLedgerDto detailLedgerDto);
@@ -114,7 +115,7 @@ public interface TransportService {
     DetailLedger getDetailLedger(@PathVariable Long id);
 
     @GetMapping(path = "/api/detailLedger")
-    List<DetailLedger> listDetailLedger();
+    Page<DetailLedger> listDetailLedger(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size);
 
     @PostMapping(path = "/api/voucher/add")
     Long addVoucher(@RequestBody VoucherDto voucherDto);
@@ -138,7 +139,7 @@ public interface TransportService {
     Voucher getVoucher(@PathVariable Long id);
 
     @GetMapping(path = "/api/voucher")
-    List<Voucher> listVoucher();
+    Page<Voucher> listVoucher(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size);
 
     @PostMapping(path = "/api/order/add")
     Long addOrder(@RequestBody OrderDto orderDto);
@@ -156,7 +157,7 @@ public interface TransportService {
     Order getOrder(@PathVariable Long id);
 
     @GetMapping(path = "/api/order")
-    List<Order> listOrder();
+    Page<Order> listOrder(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size);
 
     @PostMapping(path = "/api/acceptOrderCarDriver")
     Long acceptOrderCarDriver(@RequestParam("orderId") Long orderId, @RequestParam("carId") Long carId);
@@ -183,7 +184,7 @@ public interface TransportService {
     List<UserCompany> getUserCompanyByUserId(@PathVariable Long userId);
 
     @GetMapping(path = "/api/userCompany")
-    List<UserCompany> listUserCompany();
+    Page<UserCompany> listUserCompany(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size);
 
     @PostMapping(path = "/api/companyDriver/add")
     Long addCompanyDriver(@RequestBody CompanyDriverDto companyDriverDto);
@@ -198,7 +199,7 @@ public interface TransportService {
     CompanyDriver getCompanyDriver(@PathVariable Long id);
 
     @GetMapping(path = "/api/companyDriver")
-    List<CompanyDriver> listCompanyDriver();
+    Page<CompanyDriver> listCompanyDriver(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size);
 
     @PostMapping(path = "/api/companyDriver/changeRequest")
     ChangeRequestDto changeRequestCompanyDriver (@RequestBody ChangeRequestDto changeRequestDto);

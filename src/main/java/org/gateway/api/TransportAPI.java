@@ -6,6 +6,7 @@ import org.gateway.dto.*;
 import org.gateway.model.*;
 import org.gateway.service.TransportService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -38,8 +39,8 @@ public class TransportAPI {
     }
 
     @GetMapping(path = "/api/person")
-    List<Person> listPerson() {
-        return transportService.listPerson();
+    Page<Person> listPerson(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size) {
+        return transportService.listPerson(page, size);
     }
 
     @PostMapping(path = "/api/driver/add")
@@ -63,8 +64,8 @@ public class TransportAPI {
     }
 
     @GetMapping(path = "/api/driver")
-    List<Driver> listDriver() {
-        return transportService.listDriver();
+    Page<Driver> listDriver(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size) {
+        return transportService.listDriver(page, size);
     }
 
     @PostMapping(path = "/api/car/add")
@@ -88,8 +89,8 @@ public class TransportAPI {
     }
 
     @GetMapping(path = "/api/car")
-    public List<Car> listCar() {
-        return transportService.listCar();
+    public Page<Car> listCar(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size) {
+        return transportService.listCar(page, size);
     }
 
     @PostMapping(path = "/api/plaque/add")
@@ -113,8 +114,8 @@ public class TransportAPI {
     }
 
     @GetMapping(path = "/api/plaque")
-    List<Plaque> listPlaque() {
-        return transportService.listPlaque();
+    Page<Plaque> listPlaque(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size) {
+        return transportService.listPlaque(page, size);
     }
 
     @PostMapping(path = "/api/generalLedger/add")
@@ -163,8 +164,8 @@ public class TransportAPI {
     }
 
     @GetMapping(path = "/api/subsidiaryLedger")
-    List<SubsidiaryLedger> listSubsidiaryLedger() {
-        return transportService.listSubsidiaryLedger();
+    Page<SubsidiaryLedger> listSubsidiaryLedger(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size) {
+        return transportService.listSubsidiaryLedger(page, size);
     }
 
     @PostMapping(path = "/api/detailLedger/add")
@@ -188,8 +189,8 @@ public class TransportAPI {
     }
 
     @GetMapping(path = "/api/detailLedger")
-    List<DetailLedger> listDetailLedger() {
-        return transportService.listDetailLedger();
+    Page<DetailLedger> listDetailLedger(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size) {
+        return transportService.listDetailLedger(page, size);
     }
 
     @PostMapping(path = "/api/voucher/add")
@@ -228,8 +229,8 @@ public class TransportAPI {
     }
 
     @GetMapping(path = "/api/voucher")
-    List<Voucher> listVoucher() {
-        return transportService.listVoucher();
+    Page<Voucher> listVoucher(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size) {
+        return transportService.listVoucher(page, size);
     }
 
     @PostMapping(path = "/api/order/add")
@@ -258,8 +259,8 @@ public class TransportAPI {
     }
 
     @GetMapping(path = "/api/order")
-    List<Order> listOrder() {
-        return transportService.listOrder();
+    Page<Order> listOrder(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size) {
+        return transportService.listOrder(page, size);
     }
 
     @PostMapping(path = "/api/acceptOrderCarDriver")
@@ -303,8 +304,8 @@ public class TransportAPI {
     }
 
     @GetMapping(path = "/api/userCompany")
-    List<UserCompany> listUserCompany() {
-        return transportService.listUserCompany();
+    Page<UserCompany> listUserCompany(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size) {
+        return transportService.listUserCompany(page, size);
     }
 
     @PostMapping(path = "/api/companyDriver/add")
@@ -328,15 +329,14 @@ public class TransportAPI {
     }
 
     @GetMapping(path = "/api/companyDriver")
-    List<CompanyDriver> listCompanyDriver(){
-        return transportService.listCompanyDriver();
+    Page<CompanyDriver> listCompanyDriver(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size) {
+        return transportService.listCompanyDriver(page, size);
     }
 
     @PostMapping(path = "/api/companyDriver/changeRequest")
-    ChangeRequestDto changeRequestCompanyDriver (@RequestBody ChangeRequestDto changeRequestDto){
+    ChangeRequestDto changeRequestCompanyDriver(@RequestBody ChangeRequestDto changeRequestDto) {
         return transportService.changeRequestCompanyDriver(changeRequestDto);
     }
-
 
 
 }

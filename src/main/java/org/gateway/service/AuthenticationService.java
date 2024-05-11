@@ -3,6 +3,7 @@ package org.gateway.service;
 import org.gateway.dto.*;
 import org.gateway.model.*;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -60,7 +61,7 @@ public interface AuthenticationService {
     Permission getPermission(@PathVariable Long id);
 
     @GetMapping(path = "/api/permission")
-    List<Permission> listPermission();
+    Page<Permission> listPermission(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size);
 
     @PostMapping(path = "/api/role/add")
     Long addRole(@RequestBody Role role);
@@ -73,6 +74,9 @@ public interface AuthenticationService {
 
     @GetMapping(path = "/api/role/{id}")
     Role getRole(@PathVariable Long id);
+
+    @GetMapping(path = "/api/role")
+    Page<Role> listRole(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size);
 
     @PostMapping(path = "/api/rolePermission/add")
     Long addRolePermission(@RequestBody RolePermissionDto rolePermissionDto);
@@ -87,7 +91,7 @@ public interface AuthenticationService {
     RolePermission getRolePermission(@PathVariable Long id);
 
     @GetMapping(path = "/api/rolePermission")
-    List<RolePermission> listRolePermission();
+    Page<RolePermission> listRolePermission(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size);
 
     @PostMapping(path = "/api/userGroup/add")
     Long addUserGroup(@RequestBody UserGroup userGroup);
@@ -99,7 +103,7 @@ public interface AuthenticationService {
     Long removeUserGroup(@PathVariable Long id);
 
     @GetMapping(path = "/api/userGroup")
-    List<UserGroup> listUserGroup();
+    Page<UserGroup> listUserGroup(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size);
 
     @PostMapping(path = "/api/userGroupDetail/add")
     Long addUserGroupDetail(@RequestBody UserGroupDetailDto userGroupDetailDto);
@@ -114,7 +118,7 @@ public interface AuthenticationService {
     UserGroupDetail getUserGroupDetail(@PathVariable Long id);
 
     @GetMapping(path = "/api/userGroupDetail")
-    List<UserGroupDetail> listUserGroupDetail();
+    Page<UserGroupDetail> listUserGroupDetail(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size);
 
     @PostMapping(path = "/api/userGroupRole/add")
     Long addUserGroupRole(@RequestBody UserGroupRoleDto userGroupRoleDto);
@@ -129,7 +133,7 @@ public interface AuthenticationService {
     UserGroupRole getUserGroupRole(@PathVariable Long id);
 
     @GetMapping(path = "/api/userGroupRole")
-    List<UserGroupRole> listUserGroupRole();
+    Page<UserGroupRole> listUserGroupRole(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size);
 
     @PostMapping(path = "/api/userPermission/add")
     Long addUserPermission(@RequestBody UserPermissionDto userPermissionDto);
@@ -144,7 +148,7 @@ public interface AuthenticationService {
     UserPermission getUserPermission(@PathVariable Long id);
 
     @GetMapping(path = "/api/userPermission")
-    List<UserPermission> listUserPermission();
+    Page<UserPermission> listUserPermission(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size);
 
     @PostMapping(path = "/api/userRole/add")
     Long addUserRole(@RequestBody UserRoleDto userRoleDto);
@@ -159,7 +163,7 @@ public interface AuthenticationService {
     UserRole getUserRole(@PathVariable Long id);
 
     @GetMapping(path = "/api/userRole")
-    List<UserRole> listUserRole();
+    Page<UserRole> listUserRole(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size);
 
     @GetMapping(path = "/api/userPermissionPerUser/{userId}")
     List<UserPermission> userPermissions(@PathVariable Long userId);

@@ -5,6 +5,7 @@ import org.gateway.dto.*;
 import org.gateway.model.*;
 import org.gateway.service.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,7 +25,7 @@ public class AuthenticationAPI {
     }
 
     @GetMapping(path = "/logout")
-    public ResponseEntity<String> logout(){
+    public ResponseEntity<String> logout() {
         return authenticationService.logout();
     }
 
@@ -34,7 +35,7 @@ public class AuthenticationAPI {
     }
 
     @GetMapping(path = "/getUser")
-    ResponseEntity<Map> getUserObject(@ModelAttribute("token") String token) {
+    ResponseEntity<Map> getUserObject(@RequestParam("token") String token) {
         return authenticationService.getUserObject(token);
     }
 
@@ -99,8 +100,8 @@ public class AuthenticationAPI {
     }
 
     @GetMapping(path = "/api/permission")
-    List<Permission> listPermission() {
-        return authenticationService.listPermission();
+    Page<Permission> listPermission(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size) {
+        return authenticationService.listPermission(page, size);
     }
 
     @PostMapping(path = "/api/role/add")
@@ -121,6 +122,11 @@ public class AuthenticationAPI {
     @GetMapping(path = "/api/role/{id}")
     Role getRole(@PathVariable Long id) {
         return authenticationService.getRole(id);
+    }
+
+    @GetMapping(path = "/api/role")
+    public Page<Role> listRole(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size) {
+        return authenticationService.listRole(page, size);
     }
 
     @PostMapping(path = "/api/rolePermission/add")
@@ -144,8 +150,8 @@ public class AuthenticationAPI {
     }
 
     @GetMapping(path = "/api/rolePermission")
-    List<RolePermission> listRolePermission() {
-        return authenticationService.listRolePermission();
+    Page<RolePermission> listRolePermission(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size) {
+        return authenticationService.listRolePermission(page, size);
     }
 
     @PostMapping(path = "/api/userGroup/add")
@@ -164,8 +170,8 @@ public class AuthenticationAPI {
     }
 
     @GetMapping(path = "/api/userGroup")
-    List<UserGroup> listUserGroup() {
-        return authenticationService.listUserGroup();
+    Page<UserGroup> listUserGroup(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size) {
+        return authenticationService.listUserGroup(page, size);
     }
 
     @PostMapping(path = "/api/userGroupDetail/add")
@@ -189,8 +195,8 @@ public class AuthenticationAPI {
     }
 
     @GetMapping(path = "/api/userGroupDetail")
-    List<UserGroupDetail> listUserGroupDetail() {
-        return authenticationService.listUserGroupDetail();
+    Page<UserGroupDetail> listUserGroupDetail(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size) {
+        return authenticationService.listUserGroupDetail(page, size);
     }
 
     @PostMapping(path = "/api/userGroupRole/add")
@@ -214,8 +220,8 @@ public class AuthenticationAPI {
     }
 
     @GetMapping(path = "/api/userGroupRole")
-    List<UserGroupRole> listUserGroupRole() {
-        return authenticationService.listUserGroupRole();
+    Page<UserGroupRole> listUserGroupRole(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size) {
+        return authenticationService.listUserGroupRole(page, size);
     }
 
     @PostMapping(path = "/api/userPermission/add")
@@ -239,8 +245,8 @@ public class AuthenticationAPI {
     }
 
     @GetMapping(path = "/api/userPermission")
-    List<UserPermission> listUserPermission() {
-        return authenticationService.listUserPermission();
+    Page<UserPermission> listUserPermission(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size) {
+        return authenticationService.listUserPermission(page , size);
     }
 
     @PostMapping(path = "/api/userRole/add")
@@ -264,8 +270,8 @@ public class AuthenticationAPI {
     }
 
     @GetMapping(path = "/api/userRole")
-    List<UserRole> listUserRole() {
-        return authenticationService.listUserRole();
+    Page<UserRole> listUserRole(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size) {
+        return authenticationService.listUserRole(page, size);
     }
 
     @GetMapping(path = "/api/userPermissionPerUser/{userId}")
