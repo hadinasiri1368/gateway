@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CompletableFuture;
 
 @RestController
 @SecurityRequirement(name = "Bearer Authentication")
@@ -28,7 +29,7 @@ public class AuthenticationAPI {
     }
 
     @GetMapping(path = "/getUserId")
-    ResponseEntity<String> getUserId(@ModelAttribute("token") String token) {
+    ResponseEntity<String> getUserId(@RequestParam("token") String token) {
         return authenticationService.getUserId(token);
     }
 
