@@ -157,7 +157,7 @@ public interface TransportService {
     Order getOrder(@PathVariable Long id);
 
     @GetMapping(path = "/api/order")
-    Page<Order> listOrder(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size);
+    List<Order> listOrder();
 
     @PostMapping(path = "/api/acceptOrderCarDriver")
     Long acceptOrderCarDriver(@RequestParam("orderId") Long orderId, @RequestParam("carId") Long carId);

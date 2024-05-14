@@ -259,8 +259,8 @@ public class TransportAPI {
     }
 
     @GetMapping(path = "/api/order")
-    Page<Order> listOrder(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size) {
-        return transportService.listOrder(page, size);
+    List<Order> listOrder() {
+        return transportService.listOrder();
     }
 
     @PostMapping(path = "/api/acceptOrderCarDriver")

@@ -28,7 +28,7 @@ public interface AuthenticationService {
     List<User> listUser();
 
     @GetMapping(path = "/api/userPerson")
-    List<UserPersonDto> userPerson();
+    Page<UserPersonDto> userPerson(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size);
 
     @PostMapping(path = "/api/user/add")
     Long addUser(@RequestBody User user);

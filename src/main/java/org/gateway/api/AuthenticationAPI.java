@@ -45,8 +45,8 @@ public class AuthenticationAPI {
     }
 
     @GetMapping(path = "/api/userPerson")
-    List<UserPersonDto> listUserPerson() {
-        return authenticationService.userPerson();
+    Page<UserPersonDto> listUserPerson(@RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size) {
+        return authenticationService.userPerson(page, size);
     }
 
     @PostMapping(path = "/api/user/add")
