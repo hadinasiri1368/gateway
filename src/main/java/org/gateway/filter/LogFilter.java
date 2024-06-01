@@ -8,7 +8,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.gateway.common.CommonUtils;
 import org.gateway.model.ApiData;
-import org.springframework.core.annotation.Order;
 import org.springframework.web.filter.OncePerRequestFilter;
 import org.springframework.web.util.ContentCachingRequestWrapper;
 import org.springframework.web.util.ContentCachingResponseWrapper;
@@ -18,8 +17,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
-@Order(2)
+//log per request , when you dont use spring boot gateway
+//@Order(2)
 @Slf4j
 public class LogFilter extends OncePerRequestFilter implements Filter {
     protected void doFilterInternal_(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {

@@ -1,5 +1,6 @@
 server:
   port: 8083
+  forward-headers-strategy: framework
 eureka:
   client:
     serviceUrl:
@@ -8,8 +9,54 @@ eureka:
 spring:
   application:
     name: GATEWAY
-
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      routes:
+        - id: authentication
+          predicates:
+            - Path=/authentication/**
+          uri: lb://AUTHENTICATION
+        - id: transport
+          predicates:
+            - Path=/transport/**
+          uri: lb://TRANSPORT
+        - id: basicData
+          predicates:
+            - Path=/basicData/**
+          uri: lb://BASICDATA
+        - id: login
+          predicates:
+            - Path=/login
+          uri: lb://AUTHENTICATION
+        - id: logout
+          predicates:
+            - Path=/logout
+          uri: lb://AUTHENTICATION
+        - id: transportSwagger
+          uri: lb://TRANSPORT
+          predicates:
+            - Path=/transportSwagger/**
+          filters:
+            - RewritePath=/transportSwagger/(?<segment>.*), /${segment}
+            - SetRequestHeader=Authorization, $httpHeader(Authorization)
+        - id: basicDataSwagger
+          uri: lb://BASICDATA
+          predicates:
+            - Path=/basicDataSwagger/**
+          filters:
+            - RewritePath=/basicDataSwagger/(?<segment>.*), /${segment}
+            - SetRequestHeader=Authorization, $httpHeader(Authorization)
+        - id: authenticationSwagger
+          uri: lb://AUTHENTICATION
+          predicates:
+            - Path=/authenticationSwagger/**
+          filters:
+            - RewritePath=/authenticationSwagger/(?<segment>.*), /${segment}
+            - SetRequestHeader=Authorization, $httpHeader(Authorization)
 logging:
   file:
     name: LOG_GATEWAY.TXT
-
+#  level:
+#    org.springframework.cloud.gateway: DEBUG
