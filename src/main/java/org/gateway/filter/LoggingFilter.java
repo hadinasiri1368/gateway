@@ -24,17 +24,18 @@ import static org.springframework.cloud.gateway.support.ServerWebExchangeUtils.*
 
 @Slf4j
 @Component
-public class LoggingFilter implements GlobalFilter , Ordered {
+public class LoggingFilter implements GlobalFilter, Ordered {
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         Route route = exchange.getAttribute(GATEWAY_ROUTE_ATTR);
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-        log.info(String.format("Incoming request:   %s  Routed To Service Id:%s   Start Date : %s   UUID: %s ", exchange.getRequest().getURI(),route.getUri(), dateFormat.format(new Date()),exchange.getRequest().getHeaders().get("X-UUID").toString()));
+        log.info(String.format("Incoming request:   %s  Routed To Service Id:%s   Start Date : %s   UUID: %s ", exchange.getRequest().getURI(), route.getUri(), dateFormat.format(new Date()), exchange.getRequest().getHeaders().get("X-UUID").toString()));
         return chain.filter(exchange);
     }
-   @Override
+
+    @Override
     public int getOrder() {
-        return Ordered.LOWEST_PRECEDENCE;
+        return Ordered.LOWEST_PRECEDENCE-1;
     }
 
 

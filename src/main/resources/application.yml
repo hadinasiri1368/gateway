@@ -13,6 +13,18 @@ spring:
     web-application-type: reactive
   cloud:
     gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowed-origin-patterns:
+              - "*"
+            allowed-methods:
+              - "*"
+            allowed-headers:
+              - "*"
+            allow-credentials: true
       routes:
         - id: authentication
           predicates:
@@ -55,6 +67,7 @@ spring:
           filters:
             - RewritePath=/authenticationSwagger/(?<segment>.*), /${segment}
             - SetRequestHeader=Authorization, $httpHeader(Authorization)
+
 logging:
   file:
     name: LOG_GATEWAY.TXT
