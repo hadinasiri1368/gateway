@@ -73,3 +73,9 @@ logging:
     name: LOG_GATEWAY.TXT
 #  level:
 #    org.springframework.cloud.gateway: DEBUG
+
+redis:
+  port: 6379
+  limit: 3
+  time-interval-in-seconds: 60
+  excluded-endpoints: /authenticationSwagger/,/transportSwagger/,/basicDataSwagger/

@@ -4,19 +4,40 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
 import org.gateway.dto.ExceptionDto;
 import org.gateway.model.ApiData;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.stereotype.Component;
 import org.springframework.web.util.ContentCachingRequestWrapper;
 import org.springframework.web.util.ContentCachingResponseWrapper;
 
 import java.util.*;
-
+@Component
 public class CommonUtils {
 
+    private static MessageSource messageSource;
+
+    @Autowired
+    public void setMessageSource(MessageSource messageSource) {
+        CommonUtils.messageSource = messageSource;
+    }
     public static String getMessage(Exception e) {
         String array[] = e.getMessage().split(":");
         String message = array[array.length - 1].replace("[", "").replace("]", "");
         return message;
     }
 
+    public static Long longValue(Object number) {
+        if (isNull(number))
+            return null;
+        else if (number instanceof Number)
+            return ((Number) number).longValue();
+        else
+            try {
+                return Long.valueOf(number.toString().trim());
+            } catch (NumberFormatException e) {
+                return null;
+            }
+    }
     public static List<ApiData> getRequestInfo(HttpServletRequest request, ContentCachingRequestWrapper contentCachingRequestWrapper, ContentCachingResponseWrapper contentCachingResponseWrapper) {
         List<ApiData> returnValue = new ArrayList<>();
         returnValue.add(new ApiData("apiInfo", String.format("Method : %s , request Url : %s ", request.getMethod(), request.getRequestURI())));
@@ -103,5 +124,9 @@ public class CommonUtils {
         } catch (Exception e) {
             return null;
         }
+    }
+
+    public static String getMessage(String key) {
+        return messageSource.getMessage(key, null, null);
     }
 }
