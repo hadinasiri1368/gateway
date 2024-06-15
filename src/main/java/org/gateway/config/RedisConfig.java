@@ -9,6 +9,7 @@ import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import redis.embedded.RedisServer;
+import redis.embedded.RedisServerBuilder;
 
 import java.io.IOException;
 
@@ -18,10 +19,15 @@ public class RedisConfig {
     private RedisServer redisServer;
     @Value("${redis.port}")
     private Integer redisPort;
+    @Value("${redis.size}")
+    private String redisSize;
 
     @PostConstruct
-    public void startRedis() throws IOException {
-        redisServer = new RedisServer(redisPort);
+    public void startRedis() {
+        redisServer = new RedisServerBuilder()
+                .setting("maxheap " + redisSize)
+                .port(redisPort)
+                .build();
         redisServer.start();
     }
 
